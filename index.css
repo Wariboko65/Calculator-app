@@ -1,0 +1,245 @@
+.theme-one {
+    --main_background: hsl(222, 26%, 31%);
+    --toggle_background: hsl(223, 31%, 20%);
+    --screen_background: hsl(224, 36%, 15%);
+    --Key_background: hsl(225, 21%, 49%);
+    --Key_shadow: hsl(224, 28%, 35%);
+    --Key_background2: hsl(6, 63%, 50%);
+    --Key_shadow2: hsl(6, 70%, 34%);
+    --Key_background3: hsl(30, 25%, 89%);
+    --Key_shadow3: hsl(28, 16%, 65%);
+    --equal_text: hsl(0, 0%, 100%);
+    --top_text: hsl(0, 0%, 100%);
+    --text1: hsl(221, 14%, 31%);
+    --text3: hsl(0, 0%, 100%);
+    --small_font: 11px;
+    --switch: 5%;
+    --weight: 700; 
+}
+
+.theme-two {
+    --main_background: hsl(0, 0%, 90%);
+    --toggle_background: hsl(0, 5%, 81%);
+    --screen_background: hsl(0, 0%, 93%);
+    --Key_background: hsl(185, 42%, 37%);
+    --Key_shadow: hsl(185, 58%, 25%);
+    --Key_background2: hsl(25, 98%, 40%);
+    --Key_shadow2: hsl(25, 99%, 27%);
+    --Key_background3: hsl(45, 7%, 89%);
+    --Key_shadow3: hsl(35, 11%, 61%);
+    --top_text: hsl(60, 10%, 19%);
+    --text1: hsl(60, 10%, 19%);
+    --text3: hsl(0, 0%, 100%);
+    --equal_text: hsl(0, 0%, 100%);
+    --switch: 40%;
+    --small_font: 11px;
+    --weight: 700; 
+}
+
+.theme-three {
+    --main_background: hsl(268, 75%, 9%);
+    --toggle_background: hsl(268, 71%, 12%);
+    --screen_background: hsl(268, 71%, 12%);
+    --Key_background: hsl(281, 89%, 26%);
+    --Key_shadow: hsl(285, 91%, 52%);
+    --Key_background2: hsl(176, 100%, 44%);
+    --Key_shadow2: hsl(177, 92%, 70%);
+    --Key_background3: hsl(268, 47%, 21%);
+    --Key_shadow3: hsl(290, 70%, 36%);
+    --text1: hsl(52, 100%, 62%);
+    --top_text: hsl(52, 100%, 62%);
+    --text2: hsl(198, 20%, 13%);
+    --equal_text: hsl(198, 20%, 13%);
+    --text3: hsl(0, 0%, 100%);
+    --small_font: 11px;
+    --switch: 75%;
+    --weight: 700; 
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+    letter-spacing: 1px;
+    font-weight: var(--weight);
+    background-color: var(--main_background);
+}
+
+main .container {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-block: 50px;
+    gap: 30px;
+    background-color: var(--main_background);
+}
+
+.row1,
+.row2,
+.row3 {
+    margin-inline: auto;
+    width: 90%;
+}
+
+.calc-value {
+    border-right: 2px solid var(--top_text);
+    animation: typing 1.2s ease-in-out infinite;
+}
+
+@keyframes typing {
+    to {
+        border-right: 2px solid transparent;
+    }
+}
+.row1 {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+.row1 > span {
+    font-size: 30px;
+    color: var(--top_text);
+}
+
+.theme {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.theme > span {
+    font-size: var(--small_font);
+    color: var(--top_text);
+}
+
+.switch {
+    background: var(--toggle_background);
+    position: relative;
+    width: 80px;
+    height: 25px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: var(--Key_background2);
+    top: 50%;
+    left: var(--switch);
+    transition: .5s;
+    transform: translatey(-50%);
+}
+
+.switch:hover::before {
+    filter: brightness(1.5);
+}
+.switch > div {
+    position: absolute;
+    top: -90%;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    color: var(--top_text);
+    font-size: var(--small_font);
+    justify-content: space-between;
+}
+
+.row2 {
+    background: var(--screen_background);
+    font-size: 35px;
+    padding: 20px;
+    text-align: right;
+    font-weight: var(--weight);
+    color: var(--top_text);
+    border-radius: 10px;
+}
+
+.row3 {
+    background-color: var(--toggle_background);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    justify-content: center;
+    padding: 20px;
+    gap: 15px;
+}
+
+.row3 button {
+    font-size: 30px;
+    padding: 30px 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: var(--weight);
+    background-color: var(--Key_background3);
+    color: var(--text1);
+    box-shadow: 0 4px 0 0 var(--Key_shadow3);
+    transition: .2s filter;
+}
+
+.row3 button:hover {
+    filter: brightness(1.5);
+}
+.row3 button:nth-child(17),
+.row3 button:nth-child(4) {
+    background-color: var(--Key_background);
+    box-shadow: 0 4px 0 0 var(--Key_shadow);
+    color: var(--text3);
+    font-size: 20px;
+}
+
+.row3 button:nth-child(17) {
+    grid-area: 5 / 1 / 6 / 3;
+}
+
+.row3 button:nth-child(18) {
+    font-size: 20px;
+    color: var(--equal_text);
+    grid-area: 5 / 3 / 6 / 5;
+    background-color: var(--Key_background2);
+    box-shadow: 0 4px 0 0 var(--Key_shadow2);
+}
+
+button:active {
+    box-shadow: 0 2px 0 0 var(--Key_shadow3);
+    transform: translatey(5px);
+}
+
+.row3 button:nth-child(17):active,
+.row3 button:nth-child(4):active {
+    box-shadow: 0 2px 0 0 var(--Key_shadow);
+}
+
+.row3 button:nth-child(18):active {
+    box-shadow: 0 2px 0 0 var(--Key_shadow2);
+}
+
+.attribution {
+    font-size: 11px; 
+    text-align: center; 
+    color: var(--top_text);
+}
+.attribution a { 
+    color: var(--Key_background2); 
+}
+
+@media screen and (min-width: 1000px) {
+    main {
+        display: flex;
+        justify-content: center;
+    }
+    main .container {
+        width: 33%;
+    }
+}
